@@ -1,0 +1,161 @@
+/*
+Theme Name: Hermosa Beach Boxing Works
+Theme URI: http://www.hermosaboxingworks.com
+Author: James Liu
+Description: The Hermosa Beach Boxing Works theme for Wordpress. Includes static front page that is editable via widgets that are integrated into the theme. The theme's base css is based on Bootstrap 3 - for responsive and mobile design. The colors are primarily monochromatic with a blue theme.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licesnes/gpl-2.0.html
+Tags: black, grey, blue, white, flexible-width, responsive, mobile
+
+This theme, like Wordpress is licensed under GPL. It is however, restricted to limited use as it was developed specifically for Hermosa Beach Boxing Works. Do not use / reproduce without explicit permission from Hermosa Beach Boxing Works.
+*/
+
+@import url('css/bootstrap.min.css');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic);
+
+/* Universal */
+
+body {
+	background: url('assets/texture.png');
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+
+.highlight {
+	color: #3366cc;
+}
+
+.btn-primary {
+	background: #3366cc;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1em;
+	border: none;
+}
+
+.btn-primary:hover {
+	background: #3366cc;
+}
+
+/* Typography */
+
+/* Header */
+.masthead {
+	background-color: black;
+	height: 5px;
+}
+
+header {
+	padding: 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+	font-size: 1.875em;
+	font-weight: bold;
+	font-style: italic;
+
+	text-transform: uppercase;
+}
+
+header .catch {
+
+}
+
+header .call {
+	position: relative;
+	clear: both;
+}
+
+
+.logo {
+	margin: 0 auto;
+}
+
+/* Navigation */
+.nav {
+	display: inline-block;	
+}
+
+.nav > li {
+	display: inline-block;
+	font-size: 1.875em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.nav > li > a:hover {
+	background: none;
+	color: #7595D4;
+}
+
+.nav > li > a{
+	color: #3366cc;
+}
+
+.nav > li > a.active {
+	color: #999;
+}
+
+/* Main */
+main .row {
+	margin: 10px 0;
+}
+
+main h1 {
+	margin: 10px 0;
+	font-size: 2.2em;
+	font-weight: bold;
+	color: #3366cc;
+	text-transform: uppercase;
+}
+
+main .box {
+	padding: 10px;
+	background: #efefef;
+}
+
+#carousel-marketing .carousel-caption {
+	position: relative;
+	left: 0;
+	right: 0;
+	text-shadow: none;
+
+	background: #efefef;
+	color: #333;
+}
+
+.carousel-indicators li {
+	background: #7595D4;
+	border: none;
+}
+
+.carousel-indicators li.active {
+	background: #264C99;
+}
+
+/* Sign up form */
+.signup {
+	text-align: center;
+}
+
+/* Footer */
+footer {
+	margin: 10px 0;
+	padding: 10px 0;
+	border-top: 1px solid #ccc;
+}
+
+/* Media Queries */
+@media (min-width: 799px) {
+	.tagline {
+		margin-top: 10%;
+	}
+}
+
+@media (max-width: 321px) {
+	main h1 {
+		font-size: 1.75em;
+	}
+}
