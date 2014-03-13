@@ -2,38 +2,7 @@
     <main>
       <section class="row marketing">
         <div class="col-sm-8 call">
-          <div id="carousel-marketing" class="carousel slide" data-ride="carousel" data-interval="10000">
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-marketing" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-marketing" data-slide-to="1"></li>
-              <li data-target="#carousel-marketing" data-slide-to="2"></li>
-            </ol>
-
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="http://placehold.it/1000x450" class="img-responsive">
-                <div class="carousel-caption">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis faucibus metus. Sed vel accumsan mauris. Mauris leo libero, pharetra id hendrerit quis, tempus vel arcu.
-                </div>
-              </div>
-
-              <div class="item">
-                <img src="http://placehold.it/1000x450" class="img-responsive">
-                <div class="carousel-caption">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis faucibus metus. Sed vel accumsan mauris. Mauris leo libero, pharetra id hendrerit quis, tempus vel arcu.
-                </div>
-              </div>
-
-              <div class="item">
-                <img src="http://placehold.it/1000x450" class="img-responsive">
-                <div class="carousel-caption">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis faucibus metus. Sed vel accumsan mauris. Mauris leo libero, pharetra id hendrerit quis, tempus vel arcu.
-                </div>
-              </div>                            
-
-            </div>      
-             
-          </div>
+          <?php get_sidebar('carousel-marketing'); ?>                           
         </div>
         <div class="col-sm-4 signup">
           <div class="box">
