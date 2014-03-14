@@ -16,6 +16,12 @@ This theme, like Wordpress is licensed under GPL. It is however, restricted to l
 
 /* Universal */
 
+html,
+html a {
+	-webkit-font-smoothing: antialiased !important;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
 body {
 	background: url('assets/texture.png');
 	font-family: 'Open Sans', sans-serif;
@@ -111,9 +117,19 @@ main h1 {
 	text-transform: uppercase;
 }
 
+main h2 {
+	margin-top: 10px;
+}
+
 main .box {
 	padding: 10px;
 	background: #efefef;
+}
+
+
+.box h2{
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 #carousel-marketing .carousel-caption {
@@ -121,9 +137,14 @@ main .box {
 	left: 0;
 	right: 0;
 	text-shadow: none;
+	padding: 0 5px;
 
 	background: #efefef;
 	color: #333;
+}
+
+#carousel-marketing .carousel-caption {
+	height: 200px;
 }
 
 .carousel-indicators li {
@@ -138,6 +159,29 @@ main .box {
 /* Sign up form */
 .signup {
 	text-align: center;
+}
+
+.signup h2 {
+	margin-top: 10px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.post-form {
+	margin: 10px 0 0 0;
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+.disclaimer {
+}
+
+
+/* Gym Hours */
+.gym-hours,
+.visit {
+	text-align: center;
+	line-height: 1em;
 }
 
 /* Footer */

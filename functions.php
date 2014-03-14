@@ -141,3 +141,5 @@ if ( class_exists('Simple_Image_Widget') ) {
 
 	add_action( 'widgets_init', 'load_widgets_slider' );
 }
+
+add_theme_support( 'post-thumbnails' );
