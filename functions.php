@@ -25,6 +25,17 @@ function bw_widget_init() {
 		'after_title'  	=> '</h3>',
 		)
 	);
+
+	register_sidebar( array(
+		'name' => __('Instagram Gallery', 'wpb'),
+		'id'	 => 'instagram-gallery',
+		'description' => __( 'Sidebar for Instagram gallery', 'wpb' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title' 	=> '<h3 class="widget-title">',
+		'after_title'  	=> '</h3>',
+		)
+	);	
 }
 add_action('widgets_init', 'bw_widget_init');
 

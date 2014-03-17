@@ -17,7 +17,7 @@
     <input type="email" class="form-control" id="email" placeholder="Phone">
   </div>
 
-  <button type="submit" class="btn btn-large btn-primary">SUBMIT</button>
+  <button type="submit" class="btn btn-large btn-primary">GET YOUR FREE CLASS</button>
 </form>
 <div class="post-form">
   <p>Have Questions?</p>

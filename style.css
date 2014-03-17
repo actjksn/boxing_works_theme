@@ -18,7 +18,6 @@ This theme, like Wordpress is licensed under GPL. It is however, restricted to l
 
 html,
 html a {
-	-webkit-font-smoothing: antialiased !important;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
@@ -30,6 +29,7 @@ body {
 
 .highlight {
 	color: #3366cc;
+
 }
 
 .btn-primary {
@@ -110,41 +110,31 @@ main .row {
 }
 
 main h1 {
-	margin: 10px 0;
+	margin: 0 0 10px;
 	font-size: 2.2em;
 	font-weight: bold;
 	color: #3366cc;
-	text-transform: uppercase;
 }
 
 main h2 {
-	margin-top: 10px;
+	margin-top: 0px;
 }
 
-main .box {
-	padding: 10px;
-	background: #efefef;
-}
-
-
-.box h2{
-	font-weight: bold;
-	text-transform: uppercase;
-}
-
-#carousel-marketing .carousel-caption {
+.carousel-caption {
 	position: relative;
+	background: #000;
+	padding: 15px;
+	opacity:0.95;
 	left: 0;
 	right: 0;
-	text-shadow: none;
-	padding: 0 5px;
+	bottom: 0px;
 
-	background: #efefef;
-	color: #333;
+	margin-top: -40px;
+	margin-bottom: 20px;
+	height: 200px;
 }
 
-#carousel-marketing .carousel-caption {
-	height: 200px;
+.carousel-indicators {
 }
 
 .carousel-indicators li {
@@ -159,6 +149,11 @@ main .box {
 /* Sign up form */
 .signup {
 	text-align: center;
+	background: #efefef;
+}
+
+.signup h1 {
+	text-transform: uppercase;
 }
 
 .signup h2 {
@@ -174,21 +169,46 @@ main .box {
 }
 
 .disclaimer {
+	font-size: 0.9em;
 }
 
-
-/* Gym Hours */
-.gym-hours,
-.visit {
-	text-align: center;
-	line-height: 1em;
+/* Secondary Row */
+.testimonials h1 {
+	line-height: 0.7em;
+	text-transform: uppercase;
+	border-bottom: 4px solid #3366cc;
 }
+
+.latest {
+}
+
+.latest h2,
+.contact h2 {
+	color: #3366CC;
+	border-bottom: 1px solid #666;
+	padding-bottom: 5px;
+}
+
+.latest h3,
+.contact h3 {
+	margin-top: 5px;
+}
+
 
 /* Footer */
 footer {
 	margin: 10px 0;
 	padding: 10px 0;
 	border-top: 1px solid #ccc;
+}
+
+.social img {
+	margin: 0 5px;
+}
+
+.social a:hover {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #333;
 }
 
 /* Media Queries */

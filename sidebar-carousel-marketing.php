@@ -1,23 +1,7 @@
 <div id="carousel-marketing" class="carousel slide" data-ride="carousel" data-interval="10000">
-  <ol class="carousel-indicators">
-    <?php $total = count_widgets('carousel-marketing'); ?>
-    <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-    <?php $slide_active = is_plugin_active('simple-image-widget/simple-image-widget.php') ?>
-
-    <?php if( ($total > 0) && $slide_active ): ?>
-      <?php for($i=0; $i < $total; $i++): ?>
-        <?php if($i == 0): ?>
-          <li data-target="#carousel-marketing" data-slide-to="<?php echo $i; ?>" class="active"></li>
-        <?php else: ?>
-          <li data-target="#carousel-marketing" data-slide-to="<?php echo $i; ?>"></li>
-        <?php endif; ?>
-      <?php endfor;?>   
-    <?php else: ?>
-      <li data-target="#carousel-marketing" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-marketing" data-slide-to="1"></li>
-      <li data-target="#carousel-marketing" data-slide-to="2"></li>       
-    <?php endif; ?>
-  </ol>
+  <?php $total = count_widgets('carousel-marketing'); ?>
+  <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+  <?php $slide_active = is_plugin_active('simple-image-widget/simple-image-widget.php') ?>
 
   <div class="carousel-inner">
     <?php if( ($total > 0) && $slide_active ): ?>
@@ -71,6 +55,21 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis faucibus metus. Sed vel accumsan mauris. Mauris leo libero, pharetra id hendrerit quis, tempus vel arcu.
         </div>
       </div>       
-    <?php endif; ?>
+    <?php endif; ?> 
   </div>
+    <ol class="carousel-indicators">
+      <?php if( ($total > 0) && $slide_active ): ?>
+        <?php for($i=0; $i < $total; $i++): ?>
+          <?php if($i == 0): ?>
+            <li data-target="#carousel-marketing" data-slide-to="<?php echo $i; ?>" class="active"></li>
+          <?php else: ?>
+            <li data-target="#carousel-marketing" data-slide-to="<?php echo $i; ?>"></li>
+          <?php endif; ?>
+        <?php endfor;?>   
+      <?php else: ?>
+        <li data-target="#carousel-marketing" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-marketing" data-slide-to="1"></li>
+        <li data-target="#carousel-marketing" data-slide-to="2"></li>       
+      <?php endif; ?>
+    </ol>     
 </div>
