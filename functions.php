@@ -36,8 +36,46 @@ function bw_widget_init() {
 		'after_title'  	=> '</h3>',
 		)
 	);	
+
+	register_sidebar( array(
+		'name' => __('Instructors Listing', 'wpb'),
+		'id'	 => 'instructors',
+		'description' => __( 'Post some short bios of our instructors here.', 'wpb' ),
+		'before_widget' => '<div class="col-sm-12 col-md-6">',
+		'after_widget'  => '</div>',
+		'before_title' 	=> '<h3 class="widget-title">',
+		'after_title'  	=> '</h3>',
+		)
+	);	
 }
 add_action('widgets_init', 'bw_widget_init');
+
+function register_menus() {
+	register_nav_menu('navigation-menu', __('Navigation Menu'));
+}
+add_action('init', 'register_menus');
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+	$title = (get_the_title($post));
+	// This conditional accounts for pages...
+    if(!is_front_page() && $item->title == $title){ 
+        $classes[] = "active";
+     } elseif (is_front_page() && $item->title == "Home") {
+     	$classes[] = "active";
+     }
+     return $classes;
+}
+
+function custom_excerpt_length( $length ) {
+	return 55;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function new_excerpt_more( $more ) {
+	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 function count_widgets($sidebar_id) {
 	$sidebars = wp_get_sidebars_widgets();
@@ -93,17 +131,18 @@ if ( class_exists('Simple_Image_Widget') ) {
 			$instance['link_close'] = '';
 			if ( ! empty ( $instance['link'] ) ) {
 				$target = ( empty( $instance['new_window'] ) ) ? '' : ' target="_blank"';
-				$instance['link_open'] = '<a href="' . esc_url( $instance['link'] ) . '"' . $target . '>';
+				//$instance['link_open'] = '<a href="' . esc_url( $instance['link'] ) . '"' . $target . '>';
+				$instance['link_open'] = '<a href="' . esc_url( $instance['link'] ) . '"' . '>';
 				$instance['link_close'] = '</a>';
+				$link = $instance['link_open'] . $instance['link_close'];
 			}
 
 			$output = $args['before_widget'];
-
 				// Allow custom output to override the default HTML.
 				if ( $inside = apply_filters( 'simple_image_widget_output', '', $args, $instance, $this->id_base ) ) {
 					$output .= $inside;
 				} else {
-					$output .= ( empty( $instance['title'] ) ) ? '' : $args['before_title']. $instance['title'] . $args['after_title'];
+					
 
 					// Add the image.
 					if ( ! empty( $instance['image_id'] ) ) {			
@@ -131,13 +170,18 @@ if ( class_exists('Simple_Image_Widget') ) {
 
 					// Add the text.
 					if ( ! empty( $instance['text'] ) ) {
-						$output .= '<div class="carousel-caption">' . apply_filters( 'the_content', $instance['text'] ) . '</div>';
+						$title .= ( empty( $instance['title'] ) ) ? '' : $args['before_title']. $instance['title'] . $args['after_title'];
+						$link = '<a class="btn btn-primary" href="' . esc_url( $instance['link'] ) . '"' . '>' . $instance['link_text'] . $instance['link_close'];
+						$content = $instance['text'] . '<p class="more">' . $link . "</p>";
+						$output .= '<div class="carousel-caption">' . $title . apply_filters( 'the_content', $instance['text'] ) . $link . '</div>';
 					}
 
 					// Add a more link.
+					/*
 					if ( ! empty( $instance['link_open'] ) && ! empty( $instance['link_text'] ) ) {
 						$output .= '<p class="more">' . $instance['link_open'] . $instance['link_text'] . $instance['link_close'] . '</p>';
 					}
+					*/
 				}
 
 			$output .= $args['after_widget'];

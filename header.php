@@ -39,6 +39,14 @@
 
     <nav class="row">
       <div class="text-center">
+        <?php wp_nav_menu( array( 
+              'theme_location' => 'navigation-menu', 
+              'container' => '', 
+              'container_class' => '', 
+              'items_wrap' => '<ul class="nav">%3$s</ul>',
+              ) ); 
+        ?>
+        <!--
         <ul class="nav">
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#">About</a></li>
@@ -47,5 +55,6 @@
           <li><a href="#">Contact</a></li>
           <li><a href="#">Blog</a></li>
         </ul>
+      -->
       </div>
     </nav>
